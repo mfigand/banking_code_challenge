@@ -18,11 +18,11 @@ Description
 
 The purpose of this code test is to show us your skills in:
 
-• Object Oriented Programming
-• TDD
-• Clean code
-• Git
-• Problem solving
+* Object Oriented Programming
+* TDD
+* Clean code
+* Git
+* Problem solving
 
 Please keep these aspects in mind as you develop your solution. Also, your
 chosen implementation doesn't necessarily have to be the best you can think of,
@@ -30,22 +30,24 @@ but one that you can implement in the allocated time.
 
 ## Instructions
 
-• Create a project which models the situation below.
-• The language used should be Ruby​ (unless previously agreed otherwise).
-• All code should be tested following TDD​.
-• A README​ file must be attached explaining your implementation.
-• Create a .zip with your code​ and git​ directory.
-• Answer our email with the zip​ of the project.
+* Create a project which models the situation below.
+* The language used should be Ruby​ (unless previously agreed otherwise).
+* All code should be tested following TDD​.
+* A README​ file must be attached explaining your implementation.
+* Create a .zip with your code​ and git​ directory.
+* Answer our email with the zip​ of the project.
 
 ## Background
 
 The software you write in this test will be used for banks. Banks have accounts.
 Accounts hold money. Transfers can be made between accounts. Banks store the
 history of transfers.
+
 There can be two types of transfers:
-• Intra-bank​ transfers, between accounts of the same bank. They don't
+
+* Intra-bank​ transfers, between accounts of the same bank. They don't
 have commissions, they don't have limits and they always succeed.
-• Inter-bank​ transfers, between accounts of different banks. They have 5€
+* Inter-bank​ transfers, between accounts of different banks. They have 5€
 commissions, they have a limit of 1000€ per transfer. And they have a 30%
 chance of failure.
 
