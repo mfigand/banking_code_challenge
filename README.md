@@ -1,5 +1,5 @@
-banking_code_challenge
-======================
+# banking_code_challenge
+Code challenge for Digital Origin
 
 Install
 -------
@@ -14,18 +14,22 @@ Install
 Description
 -----------
 
-About​ ​This​ ​Test
+## About​ ​This​ ​Test
+
 The purpose of this code test is to show us your skills in:
+
 • Object Oriented Programming
 • TDD
 • Clean code
 • Git
 • Problem solving
+
 Please keep these aspects in mind as you develop your solution. Also, your
 chosen implementation doesn't necessarily have to be the best you can think of,
 but one that you can implement in the allocated time.
 
-Instructions
+## Instructions
+
 • Create a project which models the situation below.
 • The language used should be Ruby​ (unless previously agreed otherwise).
 • All code should be tested following TDD​.
@@ -33,7 +37,8 @@ Instructions
 • Create a .zip with your code​ and git​ directory.
 • Answer our email with the zip​ of the project.
 
-Background
+## Background
+
 The software you write in this test will be used for banks. Banks have accounts.
 Accounts hold money. Transfers can be made between accounts. Banks store the
 history of transfers.
@@ -48,17 +53,21 @@ chance of failure.
 Features
 --------
 
-Part​ ​1
+## Part​ ​1
+
 Create the models and their relationships to accurately reflect banks, accounts
 and transfers. Make sure that new types of accounts and transfers can be added
 to the bank with minimal effort.
 
-Part​ ​2
+## Part​ ​2
+
 After modeling the domain(part 1), create a file called
 show_me_the_money.rb*​ in charge of reproducing the next situation:
+
 Jim has an account on the bank A and Emma has an account on the bank B. Jim
 owes Emma 20000€. Emma is already a bit angry, because she did not get the
 money although Jim told her that he already sent it.
+
 Help Jim send his money by developing a transfer​ ​agent​. This agent assures
 that everybody gets their money. When the agent receives an order to transfer
 money from account A to account B, he issues transfers considering commissions,
@@ -68,11 +77,11 @@ The execution of the script will print the balance of every account before and a
 the transfers and the history of the transfer of every bank.
 
 Questions:
---------
+----------
 
 Please also supply your answer to the following questions:
 
-• How would you improve your solution?
+##  How would you improve your solution?
 
 - If i'll know all the characteristics and purposes of the project maybe i would change parts of the models, adding a model for holders accounts.
 
@@ -80,7 +89,7 @@ Please also supply your answer to the following questions:
 
 - Also i could handle more accurate the part of making fail the 30% of Transfers randomly, i think it would be better if it depended on something more clear.
 
-• How would you adapt your solution if transfers are not instantaneous?
+##  How would you adapt your solution if transfers are not instantaneous?
 
 - Using Callbacks inside my Processes or a solution to handle the queuing system, like Sidekiq. This prevents the user from waiting and allows to control transfers errors to avoid unwanted deliveries.
 
