@@ -6,7 +6,7 @@ require 'colorize'
 puts "\nBANKING CODE CHALLENGE".yellow
 puts "XXXXXXXXXXXXXXXXXXXXXX".yellow
 
-puts "\nPART 1".green
+puts "\nPART 1".magenta
 puts "\nCreate the models and their relationships to accurately reflect banks, accounts and transfers.".green
 
 bank1 = BankingCodeChallenge::Bank.new("Bank1")
@@ -33,40 +33,56 @@ bank2.accounts.map{|a|
   puts "account number: " + a.number.to_s + " balance: €" + a.balance.to_s
 }
 
-puts "\nTransfer €500 by INRA-BANK transfer"
-puts "\nBEFORE transfer"
+puts "\nTransfer €500 by INTRA-BANK transfer".green
+puts "\nBEFORE transfer".green
+puts bank1.name
 puts "account number: " + account_1_1.number.to_s + " balance: €" + account_1_1.balance.to_s
 puts "account number: " + account_1_2.number.to_s + " balance: €" + account_1_2.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
 
 intraBank = BankingCodeChallenge::IntraBank.new(account_1_1, account_1_2, 500)
 intraBank.deliver
-puts "\nTransfering..."
+puts "\nTransfering...".cyan
 
-puts "\nAFTER transfer"
+puts "\nAFTER transfer".green
+puts bank1.name
 puts "Transfer status: " + intraBank.status
 puts "account number: " + account_1_1.number.to_s + " balance: €" + account_1_1.balance.to_s
 puts "account number: " + account_1_2.number.to_s + " balance: €" + account_1_2.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
 
 
-puts "\nTransfer €500 by INTER-BANK transfer"
-puts "\nBEFORE transfer"
+puts "\nTransfer €500 by INTER-BANK transfer".green
+puts "\nBEFORE transfer".green
+puts bank1.name
 puts "account number: " + account_1_1.number.to_s + " balance: €" + account_1_1.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
+
+puts bank2.name
 puts "account number: " + account_2_1.number.to_s + " balance: €" + account_2_1.balance.to_s
+puts "history of the transfers: " + bank2.transfers.count.to_s
+
 
 interBank = BankingCodeChallenge::InterBank.new(account_1_1, account_2_1, 500)
 interBank.deliver
-puts "\nTransfering..."
+puts "\nTransfering...".cyan
 
-puts "\nAFTER transfer"
+puts "\nAFTER transfer".green
 if interBank.status == "failed delivery"
   puts "Transfer status: Transfer failed by 30% chance of failure."
 else
   puts "Transfer status: " + interBank.status
 end
+puts bank1.name
 puts "account number: " + account_1_1.number.to_s + " balance: €" + account_1_1.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
+puts bank2.name
 puts "account number: " + account_2_1.number.to_s + " balance: €" + account_2_1.balance.to_s
+puts "history of the transfers: " + bank2.transfers.count.to_s
 
-puts "\nPART 2".green
+
+
+puts "\nPART 2".magenta
 
 puts "\nJim has an account on the bank A and Emma has an account on the bank B."
 puts "Jim owes Emma 20000€. Emma is already a bit angry, because she did not get the money although Jim told her that he already sent it."
@@ -79,16 +95,24 @@ puts "When the agent receives an order to transfer money from account A to accou
 puts "he issues transfers considering commissions,transfer limits and possibility of transfer failures."
 
 
-puts "\nTransfer €2000 by an Agent"
+puts "\nTransfer €2000 by an Agent".green
 puts "\nBEFORE transfer"
+puts bank1.name
 puts account_1_1.holder + "´s account balance: €" + account_1_1.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
+puts bank2.name
 puts account_2_1.holder + "´s account balance: €"  + account_2_1.balance.to_s
+puts "history of the transfers: " + bank2.transfers.count.to_s
 
 status = agent.makeTransfer(20000,account_1_1,account_2_1)
 
-puts "\nTransfering..."
+puts "\nTransfering...".cyan
 
 puts "\nAFTER transfer"
 puts "Transfer status: " + status
+puts bank1.name
 puts account_1_1.holder + "´s account balance: €" + account_1_1.balance.to_s
+puts "history of the transfers: " + bank1.transfers.count.to_s
+puts bank2.name
 puts account_2_1.holder + "´s account balance: €" + account_2_1.balance.to_s
+puts "history of the transfers: " + bank2.transfers.count.to_s

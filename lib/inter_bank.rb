@@ -12,9 +12,6 @@ module BankingCodeChallenge
       @limit = limit
       @failure = failure
       @status = 'pending'
-      # Banks store the history of transfers.
-      self.senderAccount.bank.addTransfer(self)
-      self.beneficiaryAccount.bank.addTransfer(self)
     end
 
     def deliver

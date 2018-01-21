@@ -12,7 +12,7 @@ module BankingCodeChallenge
       @status = 'pending'
       # Banks store the history of transfers.
       self.senderAccount.bank.addTransfer(self)
-      self.beneficiaryAccount.bank.addTransfer(self)
+      self.beneficiaryAccount.bank.addTransfer(self) if self.senderAccount.bank != self.beneficiaryAccount.bank
     end
 
   end

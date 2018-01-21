@@ -9,9 +9,6 @@ module BankingCodeChallenge
     def initialize senderAccount, beneficiaryAccount, amount
       super(senderAccount, beneficiaryAccount, amount)
       @status = 'pending'
-      # Banks store the history of transfers.
-      self.senderAccount.bank.addTransfer(self)
-      self.beneficiaryAccount.bank.addTransfer(self)
     end
 
     def deliver
